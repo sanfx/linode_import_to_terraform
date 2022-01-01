@@ -7,11 +7,15 @@ terraform {
    required_version = ">= 0.13"
 }
 
+variable token {
+  type = string
+  default = null
+  sensitive = true
+}
+
 provider "linode" {
    token = var.token
 }
-
-variable token {}
 
 resource "linode_instance" "primary_instance" {
   region = "ap-west"
@@ -57,6 +61,7 @@ resource "linode_instance" "primary_instance" {
         size             = 25088
         stackscript_id   = 0
     }
+    
     disk {
         authorized_keys  = []
         authorized_users = []

@@ -9,4 +9,8 @@ resource "linode_domain_record" "primary_domain_record" {
 }
 
 
-variable domain_record_ip {}
+variable domain_record_ip {
+      type = string
+      default = null
+      sensitive = true
+}
