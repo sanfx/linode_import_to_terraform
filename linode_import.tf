@@ -9,7 +9,6 @@ terraform {
 
 variable token {
   type = string
-  default = null
   sensitive = true
 }
 
