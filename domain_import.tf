@@ -8,6 +8,7 @@ resource "linode_domain" "primary_domain" {
 variable domain_soa_email {
   type = string
   sensitive = false
+  default = "sanfx@domain.com"
 }
 variable primary_domain_name {
   type = string
